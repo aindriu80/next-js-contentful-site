@@ -12,12 +12,13 @@ export async function getStaticProps() {
   return {
     props: {
       recipes: res.items,
+      revalidate: 1,
     },
   }
 }
 
 export default function Recipes({ recipes }) {
-  console.log('recipes', recipes)
+  // console.log('recipes', recipes)
   return (
     <div className="recipe-list">
       {recipes.map((recipe) => (
